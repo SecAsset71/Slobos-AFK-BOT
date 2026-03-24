@@ -406,6 +406,12 @@ function createBot() {
       defaultMove.liquidCost = 1000;
       defaultMove.fallDamageCost = 1000;
 
+      // Auto-vanish the bot
+setTimeout(() => {
+  bot.chat('/vanish');
+  console.log('[Bot] Ran /vanish command');
+}, 3000); // Wait 3 seconds for vanish plugin to initialize
+
       // Start all modules
       initializeModules(bot, mcData, defaultMove);
 
